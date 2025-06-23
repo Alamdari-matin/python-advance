@@ -1,0 +1,1 @@
+print(len(str(f"{int(input()):b}").replace("0", "")))
