@@ -1,0 +1,9 @@
+mlist = []
+while (True):
+    n = int(input())
+    if n != 0 :
+        mlist.append(n)
+    else :
+        break
+mlist.reverse()
+print(*mlist, sep="\n")
