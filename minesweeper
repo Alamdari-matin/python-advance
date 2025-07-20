@@ -1,0 +1,29 @@
+n, m = map(int, input().split())
+
+l = []
+for i in range(n):
+    l.append([0] * m)
+
+k = int(input())
+for i in range(k):
+    s, p = map(int, input().split())
+    l[s - 1][p - 1] = "*"
+
+
+
+def around (ss, pp):
+    for i in range(-1, 2):
+        for j in range(-1, 2):
+            if i != 0 or j != 0 :
+                if ss + i >= 0 and ss + i < n and pp + j >= 0 and pp + j < m :
+                    if l[ss + i][pp + j] == "*":
+                        l[ss][pp] += 1
+
+
+for i in range(n):
+    for j in range(m):
+        if l[i][j] != "*":
+            around(i, j)
+
+for i in range(n):
+    print(*l[i])
