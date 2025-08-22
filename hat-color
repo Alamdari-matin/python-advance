@@ -1,0 +1,20 @@
+n = int(input())
+lst = []
+for i in range(n):
+    key, value = input().split()
+    lst.append(key)
+
+
+
+# lst = ['m', 'm', 'c', 'e', 'e', 'b', 'e', ]
+max_count = 0
+max_item = None
+
+for item in lst:
+    count = lst.count(item)
+    if count > max_count:
+        max_count = count
+        max_item = item
+
+
+print(max_count)
